@@ -12,7 +12,7 @@
   <Overview>This tool retrieves the EPG data  and converts the JSON files into a single XMLTV file.&#xD;
 For Setup instructions see https://www.kodinerds.net/index.php/Thread/75986-Proof-of-Concept-WIP-easyepg-als-Addon/?postID=698823#post698823</Overview>
   <Category/>
-  <WebUI>https://[IP]:[PORT:4000]</WebUI>
+  <WebUI>http://[IP]:[PORT:4000]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/DeBaschdi/docker.new-easyepg/master/Templates/image.png</Icon>
   <ExtraParams/>
