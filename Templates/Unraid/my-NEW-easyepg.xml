@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>NEW-easyepg</Name>
+  <Repository>takealug/new-easyepg</Repository>
+  <Registry>https://hub.docker.com/repository/docker/takealug/new-easyepg</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>This tool retrieves the EPG data  and converts the JSON files into a single XMLTV file.&#xD;
+For Setup instructions see https://www.kodinerds.net/index.php/Thread/75986-Proof-of-Concept-WIP-easyepg-als-Addon/?postID=698823#post698823</Overview>
+  <Category/>
+  <WebUI>https://[IP]:[PORT:4000]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/DeBaschdi/docker.new-easyepg/master/Templates/image.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1666926102</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Webinterface" Target="4000" Default="4000" Mode="tcp" Description="Listenport for Webinterface" Type="Port" Display="always" Required="true" Mask="false">4000</Config>
+  <Config Name="UID" Target="USER_ID" Default="99" Mode="" Description="User ID to run this Container" Type="Variable" Display="always" Required="true" Mask="false">99</Config>
+  <Config Name="GID" Target="GROUP_ID" Default="100" Mode="" Description="Group ID to run this Container" Type="Variable" Display="always" Required="true" Mask="false">100</Config>
+  <Config Name="TZ" Target="TIMEZONE" Default="Europe/Berlin" Mode="" Description="Timezone inside this Container" Type="Variable" Display="always" Required="true" Mask="false">Europe/Berlin</Config>
+  <Config Name="Repository" Target="REPO" Default="script.service.easyepg-lite" Mode="" Description="Repository to clone from (user = sunsettrack4)" Type="Variable" Display="always" Required="true" Mask="false">script.service.easyepg-lite</Config>
+  <Config Name="Branch" Target="BRANCH" Default="main" Mode="" Description="Branch to clone from choosen 'REPO'" Type="Variable" Display="always" Required="true" Mask="false">main</Config>
+  <Config Name="Autoupdate" Target="UPDATE" Default="yes" Mode="" Description="Updates easyepg Scriptfiles inside This Container each restart" Type="Variable" Display="always" Required="true" Mask="false">yes</Config>
+  <Config Name="easyepg" Target="/easyepg" Default="/mnt/cache/docker/appdata/new-easyepg" Mode="rw" Description="The directory to persist easyepg Programmfiles to" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/docker/appdata/new-easyepg</Config>
+  <Config Name="EPG Guide" Target="/easyepg/xml" Default="/mnt/cache/docker/appdata/tvheadend/data" Mode="rw" Description="The directory to persist the generated XML File to (defaulot for linuxserver/tvheadend)" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/docker/appdata/tvheadend/data</Config>
+</Container>
