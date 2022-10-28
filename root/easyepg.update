@@ -13,4 +13,4 @@ rm -rf /easyepg/easyepg
 
 echo "Updating done..."
 
-cd ${PWD}
+cd /easyepg
