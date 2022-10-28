@@ -28,7 +28,7 @@ if [[ -z "${UPDATE}" ]]; then
   UPDATE='yes'
 fi
 
-if [[ ! -f /easyepg ]] || [[ "${UPDATE}" = "yes" ]]; then
+if [[ ! -d /easyepg ]] || [[ "${UPDATE}" = "yes" ]]; then
   /usr/local/bin/easyepg.update
 fi
 
