@@ -4,11 +4,10 @@ echo "Updating the NEW easyepg"
 
 PWD=$(pwd)
 rm -rf /easyepg/easyepg
-git clone https://github.com/sunsettrack4/easyepg /easyepg/easyepg
+git clone https://github.com/sunsettrack4/${REPO}.git /easyepg/easyepg
 
 cd /easyepg/easyepg
-git checkout main
+git checkout ${BRANCH}
 cp -R * /easyepg
-
 
 cd ${PWD}

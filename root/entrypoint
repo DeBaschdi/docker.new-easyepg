@@ -16,6 +16,14 @@ if [[ -z "${USER_ID}" ]]; then
   USER_ID='99'
 fi
 
+if [[ -z "${REPO}" ]]; then
+  REPO='script.service.easyepg-lite'
+fi
+
+if [[ -z "${BRANCH}" ]]; then
+  BRANCH='main'
+fi
+
 if [[ -z "${UPDATE}" ]]; then
   UPDATE='yes'
 fi

@@ -1,5 +1,5 @@
 # docker.new-easyepg
-A docker container for running the NEW easyepg
+A docker container for running the NEW [easyepg](https://github.com/sunsettrack4/script.service.easyepg-lite#easyepg-lite)
 
 ### Prerequisites
 You will need to have `docker` installed on your system and the user you want to run it needs to be in the `docker` group.
@@ -16,6 +16,8 @@ docker run \
   -e USER_ID="99" \
   -e GROUP_ID="100" \
   -e TIMEZONE="Europe/Berlin" \
+  -e REPO="script.service.easyepg-lite" \
+  -e BRANCH="main" \
   -e UPDATE="yes" \
   -p 4000:4000 \
   -v {EASYEPG_STORAGE}:/easyepg \
@@ -30,12 +32,14 @@ docker run \
 
 The available parameters in detail:
 
-| Parameter | Optional | Values/Type | Default | Description                                                    |
-| ---- | --- | --- | --- |----------------------------------------------------------------|
-| `USER_ID` | yes | [integer] | 99 | UID to run easyepg as                                          |
-| `GROUP_ID` | yes | [integer] | 100 | GID to run easyepg as                                          |
-| `TIMEZONE` | yes | [string] | Europe/Berlin | Timezone for the container                                     |
-| `UPDATE` | yes | yes/no | yes | Updates easyepg Scriptfiles inside This Container each restart |
+| Parameter  | Optional | Values/Type | Default                     | Description                                                    |
+|------------| --- | --- |-----------------------------|----------------------------------------------------------------|
+| `USER_ID`  | yes | [integer] | 99                          | UID to run easyepg as                                          |
+| `GROUP_ID` | yes | [integer] | 100                         | GID to run easyepg as                                          |
+| `TIMEZONE` | yes | [string] | Europe/Berlin               | Timezone to use inside this Container                          |
+| `REPO`     | yes | [string] | script.service.easyepg-lite | Repository to clone from (user = sunsettrack4)                 |
+| `BRANCH`   | yes | [string] | main                        | Branch to clone from choosen 'REPO'                             |
+| `UPDATE`   | yes | yes/no | yes                         | Updates easyepg Scriptfiles inside This Container each restart |
 
 Network Settings:
 
@@ -53,7 +57,9 @@ Frequently used volumes:
 | `FOLDER_FOR_XML` | no | The directory to persist the generated XML File to |
 
 
-When passing volumes please replace the name including the surrounding curly brackets with existing absolute paths with correct permissions.
+## Note
+- When passing volumes please replace the name including the surrounding curly brackets with existing absolute paths with correct permissions.
+- For Setup instructions see https://www.kodinerds.net/index.php/Thread/75986-Proof-of-Concept-WIP-easyepg-als-Addon/?postID=698823#post698823
 
 ## Support my work
 If you like my Work, please [![Paypal Donation Page](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://paypal.me/DeBaschdi) - thank you! :-)
