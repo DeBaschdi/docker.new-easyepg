@@ -6,11 +6,18 @@ PWD=$(pwd)
 rm -rf /easyepg/easyepg
 git clone https://github.com/sunsettrack4/${REPO}.git /easyepg/easyepg
 
-cd /easyepg/easyepg
-git checkout ${BRANCH}
-cp -R * /easyepg
-rm -rf /easyepg/easyepg
+if [ $? -eq 0 ]; then
+  cd /easyepg/easyepg
+  git checkout ${BRANCH}
+  if [ $? -eq 0 ]; then
+    cp -R /easyepg/easyepg/* /easyepg
+    cd /easyepg
+    rm -rf /easyepg/easyepg
 
-echo "Updating done..."
-
-cd /easyepg
+    echo "Update done..."
+  else
+    echo "Update failed while fetching repository..."
+  fi
+else
+  echo "Update failed while cloning repository..."
+fi
